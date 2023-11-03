@@ -11,7 +11,7 @@
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}"/>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="static/scripts/1-hbnb.js{{ cache_id }}"></script>
+    <script src="static/scripts/1-hbnb.js?{{ cache_id }}"></script>
     <title>HBnB</title>
   </head>
   <body>
@@ -43,11 +43,8 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for amenity in amenities|sort(attribute='name') %}
-	      <li>
-		      <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"/>
-		      {{ amenity.name }}
-	      </li>
+	      {% for amenity in amenities %}
+	      <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"/>{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
